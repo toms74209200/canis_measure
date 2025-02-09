@@ -6952,7 +6952,7 @@
 		(uuid "ad4c23b1-02d9-4a6a-97ca-9e9e066af492")
 	)
 	(label "D-"
-		(at 82.55 67.31 180)
+		(at 82.55 59.69 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7029,7 +7029,7 @@
 		(uuid "e496cd3f-faee-4605-9cab-0d7b8c620156")
 	)
 	(label "D+"
-		(at 82.55 59.69 180)
+		(at 82.55 67.31 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
