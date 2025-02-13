@@ -1,0 +1,29 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${default}",
+                "${workspaceFolder}/**",
+                "~/.arduino15/packages/esp32/hardware/esp32/3.1.1/cores/**",
+                "~/.arduino15/packages/esp32/hardware/esp32/3.1.1/libraries/**",
+                "~/.arduino15/packages/esp32/hardware/esp32/3.1.1/tools/**",
+                "~/.arduino15/packages/esp32/hardware/esp32/3.1.1/variants/**"
+            ],
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/**",
+                    "~/.arduino15/packages/esp32/hardware/esp32/3.1.1/cores/**",
+                    "~/.arduino15/packages/esp32/hardware/esp32/3.1.1/libraries/**",
+                    "~/.arduino15/packages/esp32/hardware/esp32/3.1.1/tools/**",
+                    "~/.arduino15/packages/esp32/hardware/esp32/3.1.1/variants/**"
+                ]
+            },
+            "intelliSenseMode": "linux-gcc-x64",
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c17",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}
