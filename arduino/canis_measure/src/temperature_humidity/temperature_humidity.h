@@ -24,13 +24,11 @@ constexpr uint8_t kDeviceAddress = 0x44;
 class TemperatureHumidity {
  public:
   explicit TemperatureHumidity(
-      std::shared_ptr<i2c_controller::I2cController> i2c_controller,
-      std::shared_ptr<device_sleep::DeviceSleep> sleep);
+      std::shared_ptr<i2c_controller::I2cController> i2c_controller);
   std::pair<float, float> GetTemperatureHumidity();
 
  private:
   std::shared_ptr<i2c_controller::I2cController> i2c_controller_;
-  std::shared_ptr<device_sleep::DeviceSleep> sleep_;
 };
 
 }  // namespace temperature_humidity

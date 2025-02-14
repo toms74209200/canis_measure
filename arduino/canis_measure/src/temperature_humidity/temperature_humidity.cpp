@@ -10,15 +10,14 @@
 #include "temperature_humidity.h"
 
 temperature_humidity::TemperatureHumidity::TemperatureHumidity(
-    std::shared_ptr<i2c_controller::I2cController> i2c_controller,
-    std::shared_ptr<device_sleep::DeviceSleep> sleep)
-    : i2c_controller_(i2c_controller), sleep_(sleep) {}
+    std::shared_ptr<i2c_controller::I2cController> i2c_controller)
+    : i2c_controller_(i2c_controller) {}
 
 std::pair<float, float>
 temperature_humidity::TemperatureHumidity::GetTemperatureHumidity() {
   i2c_controller_->Write(constants::kDeviceAddress,
                          std::vector<uint8_t>{0x2C, 0x06});
-  sleep_->For(std::chrono::milliseconds(500));
+  device_sleep::DeviceSleep::For(std::chrono::milliseconds(500));
 
   auto data = i2c_controller_->Read(constants::kDeviceAddress, 6);
 

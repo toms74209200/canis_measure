@@ -12,12 +12,19 @@
 #include <chrono>
 #include <cstdint>
 
+#ifdef ARDUINO
+#  include <Arduino.h>
+#endif
+
 namespace device_sleep {
 
 class DeviceSleep {
  public:
-  virtual ~DeviceSleep() noexcept = default;
-  virtual void For(const std::chrono::milliseconds duration) const noexcept = 0;
+  static void For(const std::chrono::milliseconds duration) noexcept {
+#ifdef ARDUINO
+    delay(static_cast<uint32_t>(duration.count()));
+#endif
+  };
 };
 
 }  // namespace device_sleep
