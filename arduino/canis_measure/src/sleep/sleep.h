@@ -25,6 +25,14 @@ class DeviceSleep {
     delay(static_cast<uint32_t>(duration.count()));
 #endif
   };
+
+  static void For(const std::chrono::microseconds duration) noexcept {
+#ifdef ARDUINO
+    noInterrupts();
+    delayMicroseconds(static_cast<uint32_t>(duration.count()));
+    interrupts();
+#endif
+  };
 };
 
 }  // namespace device_sleep
