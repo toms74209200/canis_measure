@@ -12,7 +12,7 @@
 #include <chrono>
 #include <cstdint>
 
-#ifdef ARDUINO
+#ifdef ARDUINO_STL
 #  include <Arduino.h>
 #endif
 
@@ -21,13 +21,13 @@ namespace device_sleep {
 class DeviceSleep {
  public:
   static void For(const std::chrono::milliseconds duration) noexcept {
-#ifdef ARDUINO
+#ifdef ARDUINO_STL
     delay(static_cast<uint32_t>(duration.count()));
 #endif
   };
 
   static void For(const std::chrono::microseconds duration) noexcept {
-#ifdef ARDUINO
+#ifdef ARDUINO_STL
     noInterrupts();
     delayMicroseconds(static_cast<uint32_t>(duration.count()));
     interrupts();
