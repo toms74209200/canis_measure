@@ -9,6 +9,8 @@
 
 #pragma once
 
+#include <cstring>
+
 #include <Arduino.h>
 #include "../serial_controller/serial_controller.h"
 

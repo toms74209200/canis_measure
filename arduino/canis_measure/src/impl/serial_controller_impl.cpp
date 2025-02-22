@@ -14,16 +14,21 @@ serial_controller::SerialControllerImpl::SerialControllerImpl(const uint8_t rx,
     : rx_(rx), tx_(tx) {}
 
 void serial_controller::SerialControllerImpl::Init() {
-  Serial.begin(9600, SERIAL_8N1, rx_, tx_);
+  Serial1.begin(9600, SERIAL_8N1, rx_, tx_);
 }
 
 void serial_controller::SerialControllerImpl::Write(std::vector<uint8_t> data) {
-  Serial.write(data.data(), data.size());
+  Serial1.write(data.data(), data.size());
 }
 
 std::vector<uint8_t> serial_controller::SerialControllerImpl::Read(
     const int_fast32_t size) {
   std::vector<uint8_t> buffer(size);
-  Serial.readBytes(buffer.data(), size);
+  byte buf[size];
+  for (int i = 0; i < size; i++) {
+    buf[i] = 0;
+  }
+  Serial1.readBytes(buf, sizeof(buf));
+  std::memcpy(buffer.data(), buf, size);
   return buffer;
 }
