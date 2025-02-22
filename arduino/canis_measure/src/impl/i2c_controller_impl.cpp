@@ -121,7 +121,7 @@ void i2c_controller::I2cControllerImpl::Write(const uint8_t address,
 }
 
 std::vector<uint8_t> i2c_controller::I2cControllerImpl::Read(
-    const uint8_t address, const int size) {
+    const uint8_t address, const int_fast32_t size) {
   std::vector<uint8_t> data;
 
   Start();
