@@ -31,8 +31,20 @@ constexpr std::array<uint8_t, 9> kReadCommand = {
 class Co2Sensor {
  public:
   explicit Co2Sensor(serial_controller::SerialController* serial_controller);
+  /**
+   * @brief Initialize the sensor
+   * Read the sensor data to initialize the sensor
+   */
   void Init();
+  /**
+   * @brief Retrieve the CO2 value from the sensor
+   * @return CO2 value in ppm
+   */
   uint16_t GetCo2();
+  /**
+   * @brief Retrieve the temperature value from the sensor
+   * @return Temperature in degrees Celsius
+   */
   int16_t GetTemperature();
 
  private:

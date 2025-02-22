@@ -25,6 +25,13 @@ class TemperatureHumidity {
  public:
   explicit TemperatureHumidity(
       std::shared_ptr<i2c_controller::I2cController> i2c_controller);
+
+  /**
+   * @brief Retrieve temperature and humidity from the sensor.
+   * @return A pair containing the temperature and humidity values.
+   * The first element is the temperature in degrees Celsius, and the second
+   * element is the humidity in percent.
+   */
   std::pair<float, float> GetTemperatureHumidity();
 
  private:
