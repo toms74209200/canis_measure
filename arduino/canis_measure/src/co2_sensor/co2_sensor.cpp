@@ -14,7 +14,6 @@ co2::Co2Sensor::Co2Sensor(
     : serial_controller_(serial_controller) {}
 
 void co2::Co2Sensor::Init() {
-  serial_controller_->Init();
   ReadMhz19b();
 }
 

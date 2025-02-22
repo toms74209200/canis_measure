@@ -9,7 +9,6 @@
 
 #pragma once
 
-#include <Arduino.h>
 #include <array>
 #include <vector>
 #include "../serial_controller/serial_controller.h"
