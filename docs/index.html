@@ -4,11 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Canis Measure - Air Quality Monitor</title>
+  <link rel="icon" href="favicon.svg" sizes="any" type="image/svg+xml">
   <meta data-rh="true" property="og:type" content="website">
   <meta data-rh="true" property="og:title" content="Canis Measure - Air Quality Monitor">
   <meta data-rh="true" property="og:url" content="https://toms74209200.github.io/canis_measure">
+  <meta data-rh="true" property="og:image" content="https://toms74209200.github.io/canis_measure/ogp.webp">
+  <meta data-rh="true" property="og:description" content="Canis Measure is air quality monitor.">
   <meta data-rh="true" name="twitter:card" content="summary_large_image">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    a:visited {
+      color: black;
+    }
+    a {
+      color:dimgray;
+    }
+  </style>
 </head>
 <body>
+  <main style="margin: 0 auto; max-width: 800px; padding: 2rem;">
+    <div id="markdown"></div>
+  </main>
+  <footer style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
+    <a href="https://github.com/toms74209200/canis_measure">
+      <img width="50" height="50" src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"/>
+    </a>
+    <a href="https://github.com/toms74209200/canis_measure">https://github.com/toms74209200/canis_measure</a>
+  </footer>
+  <script type="module">
+    const file = (() => {
+      const url = location.href;
+      if (url.includes("html")) {
+        return location.origin + "main.md";
+      }
+      return url + "main.md";
+    })();
+    fetch(file)
+      .then((response) => response.text())
+      .then((text) => {
+        document.getElementById("markdown").innerHTML = marked.parse(text);
+      });
+  </script>
 </body>
 </html>
