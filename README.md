@@ -3,10 +3,7 @@
 Air Quality Monitor
 </h1>
 
-<video width="100%" height="auto" autoplay loop muted style="background-color: transparent;">
-  <source src="https://github.com/toms74209200/canis_measure/raw/refs/heads/master/docs/canis_measure_face_movie.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+https://github.com/toms74209200/canis_measure/raw/refs/heads/master/docs/canis_measure_face_movie.mp4
 
 ## Features
 
